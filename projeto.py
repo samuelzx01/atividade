@@ -9,13 +9,14 @@ def connectar_banco():
         password = '',
         database = 'loja'
     )
+    return connect
 
 # 1. Cadastrar novo produto 
 
 def cadastrar_produto(produto, preco):
     connect = connectar_banco()
     cursor = connectar_banco.cursor()
-    sql = f'insert into loja_produtos(produto,preco) values ({produto}, {preco})'
+    sql = f'insert into loja_produtos(produto,preco) values ("{produto}, {preco}")'
     cursor.execute(sql)
     connect.commit()
     connect.close()
