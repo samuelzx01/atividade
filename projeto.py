@@ -34,7 +34,7 @@ def cadastrar_produto(produto, preco):
 
 # 4. Remover produto 
 
-# \\\ AINDA FAZENDO \\\ AINDA FAZENDO \\\ AINDA FAZENDO \\\
+
 def remover_produto(id_produto):
     
     connect = connectar_banco()
@@ -43,7 +43,7 @@ def remover_produto(id_produto):
     cursor.execute(sql)
     connect.commit()
     connect.close()
-# \\\ AINDA FAZENDO \\\ AINDA FAZENDO \\\ AINDA FAZENDO \\\
+
 
 
 
