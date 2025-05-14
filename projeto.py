@@ -22,7 +22,13 @@ def cadastrar_produto(produto, preco):
 
 # 2. Listar todos os produtos 
 
-
+def listar_produto():
+    connect = connectar_banco()
+    cursor = connectar_banco.cursor()
+    sql = 'select * from loja_produtos'
+    cursor.execute(sql)
+    connect.commit()
+    connect.close()
 
 
 
@@ -48,3 +54,7 @@ def remover_produto(id_produto):
 
 
 # 8. Sair 
+
+
+
+
