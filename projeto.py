@@ -25,14 +25,25 @@ while True:
 
 #criação do banco e conexao
 
+import mysql as my
 
+def connectar_banco():
+    connect = my.connect(
+        host = 'localhost',
+        user = 'root',
+        password = '',
+        database = 'loja'
+    )
 
 # 1. Cadastrar novo produto 
 
-
-
-
-
+def cadastrar_produto(produto, preco):
+    connect = connectar_banco()
+    cursor = connectar_banco.cursor()
+    sql = f'insert into loja_produtos(produto,preco) values ({produto}, {preco})'
+    cursor.execute(sql)
+    connect.commit()
+    connect.close()
 
 # 2. Listar todos os produtos 
 
@@ -49,8 +60,20 @@ while True:
 # 4. Remover produto 
 
 
+def remover_produto(id_produto):
+    
+    connect = connectar_banco()
+    cursor = connectar_banco.cursor()
+    sql = f"delete from loja_produtos where id = '{id_produto}'"
+    cursor.execute(sql)
+    connect.commit()
+    connect.close()
 
 
 
 
+<<<<<<< HEAD
 # 5. Sair 
+=======
+# 8. Sair 
+>>>>>>> f2ecccffbae2e243ddc06649a9c16c2de95dc2b8
