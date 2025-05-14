@@ -1,6 +1,6 @@
 #criação do banco e conexao
 
-import mysql as my
+import mysql.connector as my
 
 def connectar_banco():
     connect = my.connect(
