@@ -37,7 +37,14 @@ def listar_produto():
 
 
 # 3. Atualizar produto 
-
+def atualizar_produto(novoPreço, id):
+    connect = connectar_banco()
+    cursor = connect.cursor()
+    sql = 'update produto set preco = %s where id = %s'
+    cursor.execute(sql)
+    print ("Preço atualizado com sucesso")
+    connect.commit()
+    connect.close()
 
 
 
