@@ -8,7 +8,7 @@ def connectar_banco():
     connect = my.connect(
         host = 'localhost',
         user = 'root',
-        password = '1234',
+        password = '',
         database = 'loja'
     )
     return connect
