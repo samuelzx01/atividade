@@ -30,7 +30,7 @@ def cadastrar_produto(produto, preco):
 
 
 # 3. Atualizar produto 
-
+print ('vou atualizar')
 
 
 
