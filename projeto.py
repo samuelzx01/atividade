@@ -1,3 +1,5 @@
+
+
 #criação do banco e conexao
 
 import mysql.connector as my
@@ -9,6 +11,7 @@ def connectar_banco():
         password = '',
         database = 'loja'
     )
+    return connect
     return connect
 
 # 1. Cadastrar novo produto 
@@ -53,6 +56,9 @@ def remover_produto(id_produto):
 
 
 
+
+
+# 5. Sair 
 
 # 8. Sair 
 
