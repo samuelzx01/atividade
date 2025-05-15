@@ -41,7 +41,7 @@ def cadastrar_produto(produto, preco):
 def remover_produto(id_produto):
     
     connect = connectar_banco()
-    cursor = connectar_banco.cursor()
+    cursor = connect.cursor()
     sql = f"delete from loja_produtos where id = '{id_produto}'"
     cursor.execute(sql)
     connect.commit()
@@ -53,11 +53,10 @@ def remover_produto(id_produto):
 
 # 5. Sair 
 
-# 8. Sair 
 
 
 while True:
-    opcoes = input('1 - cadastrar\n2 - listar\n3 - atualizar\n4 - remover\n5 - Sair')
+    opcoes = input('1 - cadastrar\n2 - listar\n3 - atualizar\n4 - remover\n5 - Sair\n')
     if (opcoes == '5'):
         print('Saindo...')
         break
@@ -68,12 +67,24 @@ while True:
          print('prduto adicionado com sucesso...')
         
 
-    if (opcoes == 2):
+    if (opcoes == '2'):
         produtos = listar_produtos()
 
         for produto in produtos:
             print(f'ID:{produto['id_produto']}')
 
+
+    if (opcoes == '3'):
+        id = input('ID do produto: ')
+        novoPreco = input('Digite o novo preço: ')
+        atualizar_preco(novoPreco, id)
+        print('perço atualizado com sucesso...')
+        
+
+    if  opcoes == '4':
+        id = input('ID do produto: ')
+        remover_produto(id)
+        print('produto removido com sucesso')
     
         
         
