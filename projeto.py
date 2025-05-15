@@ -8,7 +8,7 @@ def connectar_banco():
     connect = my.connect(
         host = 'localhost',
         user = 'root',
-        password = '1234',
+        password = '12345',
         database = 'loja'
     )
     return connect
@@ -40,8 +40,8 @@ def listar_produto():
 def atualizar_produto(novoPreço, id):
     connect = connectar_banco()
     cursor = connect.cursor()
-    sql = 'update produto set preco = %s where id = %s'
-    cursor.execute(sql)
+    sql = 'update loja_produtos set preco = %s where id = %s'
+    cursor.execute(sql,(novoPreço, id))
     print ("Preço atualizado com sucesso")
     connect.commit()
     connect.close()
@@ -85,11 +85,11 @@ while True:
             print(f'ID:{produto['id_produto']}')
 
 
-    # if (opcoes == '3'):
-    #     id = input('ID do produto: ')
-    #     novoPreco = input('Digite o novo preço: ')
-    #     atualizar_preco(novoPreco, id)
-    #     print('perço atualizado com sucesso...')
+    if (opcoes == '3'):
+        id = input('ID do produto: ')
+        novoPreco = input('Digite o novo preço: ')
+        atualizar_produto(novoPreco, id)
+        print('perço atualizado com sucesso...')
         
 
     if  opcoes == '4':
